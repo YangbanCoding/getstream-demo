@@ -75,13 +75,14 @@ const CreateChannel = ({ onClose, toggleMobile }) => {
     setSearching(false);
   };
 
-  const findUsersDebounce = _debounce(findUsers, 100, {
+  const findUsersDebounce = _debounce(findUsers, 3000, {
     trailing: true,
   });
 
   useEffect(() => {
     if (inputText) {
-      findUsersDebounce();
+      findUsers()
+      // findUsersDebounce();
     }
   }, [inputText]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -90,7 +91,7 @@ const CreateChannel = ({ onClose, toggleMobile }) => {
 
     if (!selectedUsersIds.length) return;
 
-    const conversation = await client.channel('messaging', {
+    const conversation = await client.channel('livestream', {
       members: [...selectedUsersIds, client.userID],
     });
 

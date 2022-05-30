@@ -18,8 +18,6 @@ import {
 import { getRandomImage } from './assets';
 import { ChannelInner } from './components/ChannelInner/ChannelInner';
 
-faker.locale = 'ko'
-
 const urlParams = new URLSearchParams(window.location.search);
 
 // const apiKey = urlParams.get('apikey') || process.env.REACT_APP_STREAM_KEY;
@@ -29,6 +27,7 @@ const urlParams = new URLSearchParams(window.location.search);
 
 const apiKey = '7q5aesxqgvcj'
 const user = Number(new Date()).toString()
+// const user = 'hello'
 // const userToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiaGVsbG8ifQ.bXEjwhPyLctC6CDQ3l4W-2nypwQbeWW-guLyHG29Xf8'
 const targetOrigin = null
 
@@ -46,7 +45,7 @@ const sort = {
   updated_at: -1,
 };
 
-const userToConnect = { id: user, name: faker.name.lastName() + faker.name.firstName(), image: getRandomImage() };
+const userToConnect = { id: user, name: faker.name.findName(), image: getRandomImage() };
 
 if (skipNameImageSet) {
   delete userToConnect.name;
