@@ -5,6 +5,7 @@
   "dependencies": {
     "@faker-js/faker": "^7.1.0",
     "@stream-io/stream-chat-css": "^2.8.1",
+    "cssnano-preset-default": "^5.2.10",
     "eslint-plugin-import": "^2.22.1",
     "lodash.debounce": "^4.0.8",
     "react": "17.0.2",
