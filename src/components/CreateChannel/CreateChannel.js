@@ -81,8 +81,7 @@ const CreateChannel = ({ onClose, toggleMobile }) => {
 
   useEffect(() => {
     if (inputText) {
-      findUsers()
-      // findUsersDebounce();
+      findUsersDebounce();
     }
   }, [inputText]); // eslint-disable-line react-hooks/exhaustive-deps
 
